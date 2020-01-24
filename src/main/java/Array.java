@@ -1,5 +1,3 @@
-import java.util.Arrays;
-
 public class Array {
     public static void main(String[] args) {
         int a[];
@@ -67,7 +65,51 @@ public class Array {
             System.out.print(p);
         }
 
+        String[] str;
+        str = new String[10];
+        str[0]="\ncanada ";
+        str[1]="india ";
+        str[2]="nepal ";
+        str[3]="toronto ";
+        str[4]="newyork ";
+        str[5]="patel ";
+        str[6]="raman ";
+        str[7]="inshanth ";
+        str[8]="scarbough ";
+        str[9]="north york \n";
 
+
+        for(int i=0; i<str.length;i++)
+        {
+            System.out.print(str[i]);
+        }
+       String reverseStrings[]= new String[str.length];
+        String[] rstr;
+        rstr = new String[10];
+        for(int i=0;i<str.length;i++)
+         {
+           String rev= reverseStrings(str[i]);
+           reverseStrings[i]= rev;
+           rstr[i]=rev;
+           System.out.println(new String(str[i])+"<->"+ rev);
+         }
+
+
+    }
+
+    private static String reverseStrings(String s) {
+        String temp;
+        char names1[]=s.toCharArray();
+        int len=names1.length;
+        for(int i=0, j=len-1; i<len/2;i++,j--)
+        {
+            char t=names1[i];
+            names1[i]=names1[j];
+            names1[j]=t;
+
+        }
+        temp= new String(names1);
+        return temp;
     }
 
 }
