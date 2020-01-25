@@ -83,16 +83,14 @@ public class Array {
         {
             System.out.print(str[i]);
         }
-       String reverseStrings[]= new String[str.length];
-        String[] rstr;
-        rstr = new String[10];
-        for(int i=0;i<str.length;i++)
+
+        for(int i=0;i<str.length-1;i++)
          {
            String rev= reverseStrings(str[i]);
-           reverseStrings[i]= rev;
-           rstr[i]=rev;
-           System.out.println(new String(str[i])+"<->"+ rev);
+           String zig= zigzagStrings(str[i]);
+           System.out.println(new String(str[i])+"<->"+ rev+"<->"+zig );
          }
+
 
 
     }
@@ -110,6 +108,20 @@ public class Array {
         }
         temp= new String(names1);
         return temp;
+    }
+    private static String zigzagStrings(String z) {
+        String temp2;
+        char names2[]=z.toCharArray();
+        int len=names2.length;
+        for(int i=0; i<len-1;i=i+2)
+        {
+            char t=names2[i];
+            names2[i]=names2[i+1];
+            names2[i+1]=t;
+
+        }
+        temp2= new String(names2);
+        return temp2;
     }
 
 }
